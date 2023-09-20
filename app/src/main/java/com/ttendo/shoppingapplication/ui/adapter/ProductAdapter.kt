@@ -1,4 +1,4 @@
-package com.ttendo.shoppingapplication
+package com.ttendo.shoppingapplication.ui.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import com.ttendo.shoppingapplication.ui.DetailsActivity
+import com.ttendo.shoppingapplication.R
+import com.ttendo.shoppingapplication.data.model.ProductsResponse
 
 class ProductAdapter(val context: Context, val products: List<ProductsResponse>):
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
@@ -44,7 +47,7 @@ class ProductAdapter(val context: Context, val products: List<ProductsResponse>)
 
         val item = products[position]
         holder.itemView.setOnClickListener {
-            val intent = Intent(context,DetailsActivity::class.java)
+            val intent = Intent(context, DetailsActivity::class.java)
             intent.putExtra("productName",item.title)
             intent.putExtra("price",item.price)
             intent.putExtra("rating",item.rating.rate)

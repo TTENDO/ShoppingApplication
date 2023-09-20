@@ -1,4 +1,4 @@
-package com.ttendo.shoppingapplication
+package com.ttendo.shoppingapplication.data.model
 
 data class ProductsResponse(
     var id : Int?,
